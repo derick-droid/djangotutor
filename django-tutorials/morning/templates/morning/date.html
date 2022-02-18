@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+</head>
+<body>
+    <!-- if tag in the html template -->
+    <p>
+        hello world today is {{ today }}
+        {% if today.day == 1 %}
+        <p>the fast day of the month</p>  <br>
+        {% elif today.day == 30 %} <br>
+        the last day of the month 
+        {% else %}
+        {% endif %}
+        normal day of the month 
+        
+        
+    </p>
+   
+    
+</body>
+</html>
