@@ -18,7 +18,7 @@ def name(request, name):
 # Manipulating Data (CRUD)
 def crudops(request):
     #  creating entry
-    dreamreal = Dreamreal(website = "www.polo.com",  mail = "sorex@polo.com",ame = "sorex",phonenumber = "002376970")
+    dreamreal = Dreamreal(website = "www.polo.com",mails = "sorex@polo.com", name = "sorex")
     dreamreal.save()
     
     # read all entries
@@ -36,7 +36,7 @@ def crudops(request):
     res+= "<br> Deleting an entry <br>"
     sorex.delete
     
-    # update
+    # update 
     dreamreal = Dreamreal(website = "www.polo.com", mail = "sorex@polo.com", 
       name = "sorex", phonenumber = "002376970")
     

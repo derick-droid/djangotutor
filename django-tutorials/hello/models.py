@@ -1,4 +1,5 @@
 from operator import mod
+# from tkinter import CASCADE
 from unicodedata import name
 from django.db import models
 
@@ -7,6 +8,7 @@ class Dreamreal(models.Model):
     mails = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
     phonenumber = models.IntegerField
+    online = models.ForeignKey('Online', on_delete=models.CASCADE)
     
     
     class meta:
