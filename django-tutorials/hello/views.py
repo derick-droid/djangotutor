@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from hello.models import Dreamreal
 
 # http response
@@ -9,6 +9,12 @@ def welcome(request):
 # rendering html page
 def home(request):
     return render(request, "hello/index.html")
+
+def hope(request):
+    return render(request, "hello/hope.html")
+
+def diva(request):
+    return render(request, "hello/diva.html")
 
 # views accepting parameters
 
@@ -46,3 +52,26 @@ def crudops(request):
     dreamreal = "thierry"
     dreamreal.save()
     return HttpResponse(res)
+
+#  further page redirection
+def page(request):
+    flag = False
+    if flag == True:
+        
+         return redirect("/hello/home/")
+    else:
+        return redirect("/hello/welcome/")
+        
+   
+#  another redirect
+def studios(request):
+    Q = request.GET.get('q')
+    
+    if Q == str(1):
+        return redirect("/hello/hope/")
+    elif Q == str(0):
+        return redirect("/hello/diva/")
+    
+    else:
+        return HttpResponse("<h1> NOT AVAILABLE COMMAND</h1>")
+        
